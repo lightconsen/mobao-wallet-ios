@@ -1,0 +1,107 @@
+page-import {
+    .grid {
+        background: #ffffff;
+        border-radius: 0.5rem;
+        box-shadow: #DFE0E3 0px 0px 10px;
+        // min-height: 5rem;
+        .col {
+            position: relative;
+            span {
+                position: absolute;
+                top: 1.5rem;
+                right: 1rem;
+                width: 2rem;
+            }
+        }
+    }
+    .grid:nth-child(2) {
+        padding: 0 !important;
+        margin: 0 !important;
+        .col {
+            display: table;
+            padding: 0.5rem !important;
+            // textarea{
+            //     border: none;
+            //     margin: 0 auto; 
+            //     width: 100%; 
+            //     line-height: 2.3rem; 
+            //     resize: none;
+            //     display: table-cell
+            // }
+            // textarea::-webkit-input-placeholder{
+            //     height: 5rem;
+            //     line-height: 5rem; 
+            // }
+        }
+    }
+    .grid:nth-child(4) {
+        margin-bottom: 4rem;
+    }
+    p {
+        color: #717E8D;
+        font-size: 1.5rem;
+    }
+    .cont {
+        width: 100%;
+        background: #ffffff;
+        margin-top: 2rem;
+        height: 14rem;
+        border-radius: 5px;
+        box-shadow: #DFE0E3 0px 0px 10px;
+        position: relative;
+        .put {
+            height: 4rem;
+            line-height: 3rem;
+            border-bottom: 1px solid #F0F1F5;
+            margin: 0 auto;
+        }
+        .puts {
+            height: 3rem;
+            line-height: 3rem;
+            border-bottom: 1px solid #ffffff;
+            margin: 0 auto;
+        }
+        span {
+            display: block;
+            position: absolute;
+            right: 1rem;
+            top: 1.5rem;
+            img {
+                width: 2rem;
+            }
+        }
+    }
+    .submit {
+        display: block;
+        width: 100%;
+        height: 4rem;
+        margin: 1rem auto;
+        border-radius: 0.5rem;
+        font-size: 1.5rem;
+        background: linear-gradient(to right, #62CE49, #4FAD3A);
+        color: #ffffff;
+    }
+    .text-input-ios {
+        margin: 0px 0px;
+        padding: 0;
+        width: calc(100% - 8px - 8px);
+    }
+    textarea.text-input {
+        display: block;
+        // padding-top: 1rem !important;
+        margin-top: 1.5rem;
+    }
+    textarea {
+        border: none;
+        overflow: auto;
+        height: auto;
+        font: inherit;
+        width: 100%;
+        color: inherit;
+        height: 3.5rem;
+        // margin-top: 0.4rem;
+        padding-top: 1rem;
+        padding-bottom: 0.4rem;
+        resize: none;
+    }
+}

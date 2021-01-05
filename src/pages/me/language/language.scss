@@ -1,0 +1,31 @@
+page-language {
+    .item-ios.item-block .item-inner {
+        padding-right: 8px;
+        border-bottom: 1px solid #fff;
+    }
+    .yes {
+        width: 1.2rem;
+        float: right;
+        margin-top: 0rem;
+    }
+    .toolbar-title-ios {
+        padding: 18px !important;
+        color: #222 !important;
+    }
+    .item-ios {
+        margin-top: 1rem;
+        height: 5rem;
+        border-radius: 0.5rem;
+        box-shadow: #DFE0E3 0px 0px 10px;
+    }
+    .item-ios p {
+        margin: 0px 0 0px;
+        overflow: inherit;
+        font-size: 1.6rem;
+        line-height: normal;
+        text-overflow: inherit;
+        color: #222;
+        position: absolute;
+        top: 1.4rem;
+    }
+}

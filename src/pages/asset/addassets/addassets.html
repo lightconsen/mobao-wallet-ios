@@ -1,0 +1,51 @@
+<!--
+  Generated template for the AddassetsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{"assets.45" | translate}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="search">
+        <ion-searchbar [(ngModel)]="myInput" (ionInput)="onInput($event)" [placeholder]="'assets.46' | translate">
+        </ion-searchbar>
+    </div>
+    <ion-list class="lists" *ngIf="search.symbol?true:false">
+        <div class="box">
+            <span *ngIf="search.icon? false : true" class="code-img">{{search.symbol | slice:0:1 | uppercase }}</span>
+            <img *ngIf="search.icon? true : false" src="{{search.icon}}" alt="">
+            <ion-item class="items">
+                <ion-label>{{search.symbol}}</ion-label>
+                <ion-toggle (ionChange)="searchAddAssets(search)" [(ngModel)]="search.flag"></ion-toggle>
+            </ion-item>
+        </div>
+    </ion-list>
+    <ion-list class="lists" *ngIf="(type=='pass')?true:false">
+        <div class="box" *ngFor="let item of ERC20">
+            <span *ngIf="item.icon? false : true" class="code-img">{{item.symbol | slice:0:1 | uppercase }}</span>
+            <img *ngIf="item.icon? true : false" src="{{item.icon}}" alt="">
+            <ion-item class="items">
+                <ion-label>{{item.symbol}}</ion-label>
+                <ion-toggle (ionChange)="addAssets(item)" [(ngModel)]="item.flag"></ion-toggle>
+            </ion-item>
+        </div>
+    </ion-list>
+    <ion-list class="lists" *ngIf="(type=='collection')?true:false">
+        <div class="box" *ngFor="let item of ERC721">
+            <img *ngIf="item.icon ? false : true"  class="code-img" src="../../../assets/imgs/clogo.png"/>
+            <img *ngIf="item.icon? true : false" src="{{item.icon}}" alt="">
+            <ion-item class="items">
+                <ion-label>{{item.symbol}}</ion-label>
+                <ion-toggle (ionChange)="addAssets(item)" [(ngModel)]="item.flag"></ion-toggle>
+            </ion-item>
+        </div>
+    </ion-list>
+</ion-content>

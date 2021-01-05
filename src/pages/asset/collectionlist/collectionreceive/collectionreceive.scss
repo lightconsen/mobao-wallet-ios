@@ -1,0 +1,50 @@
+page-collectionreceive {
+    .box {
+        width: 90%;
+        background: #ffffff;
+        border-radius: 0.5rem;
+        margin: 0 auto;
+        margin-top: 3rem;
+        color: #ffffff;
+        padding-bottom: 4rem;
+        .top {
+            width: 100%;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            background: linear-gradient(to right, #62CE49, #4FAD3A);
+            border-radius: 0.5rem 0.5rem 0 0;
+            p {
+                width: 90%;
+                text-align: center;
+                padding-top: 1rem;
+                margin: 0 auto;
+            }
+            p:nth-child(1) {
+                font-size: 1.7rem;
+                line-height: 0rem;
+                /* margin-top: 1rem; */
+                padding-top: 1rem;
+                color: #ffffff;
+            }
+            .p2 {
+                color: #fff;
+                width: 90%;
+            }
+        }
+        p:nth-child(2) {
+            color: #222;
+            width: 100%;
+            text-align: center;
+        }
+        .qrcode {
+            width: 14rem;
+            height: 14rem;
+            background: #ffffff;
+            margin: 0 auto;
+            img {
+                width: 100%;
+                border: 1px solid #ccc;
+            }
+        }
+    }
+}

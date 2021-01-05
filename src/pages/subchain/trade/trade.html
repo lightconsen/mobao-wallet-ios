@@ -1,0 +1,139 @@
+<!--
+  Generated template for the TradePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{"subchain.18" | translate}}</ion-title>
+    </ion-navbar>
+    <div class="top_bg">
+        <!-- <img src="../../../assets/imgs/mlogo.png"> -->
+        <div class="top_logo">
+            <span>{{subChainInfo.erc20_symbol?(subChainInfo.erc20_symbol | slice:0:1):'C'}}</span>
+        </div>
+        <p>{{balance - frozen}}</p>
+        <span *ngIf="isToken" class="amount">{{"subchain.5" | translate}}:{{authorizeVal}}</span>
+        <div class="btn">
+            <button (click)="toAuthorize()" *ngIf="isToken">{{"subchain.3" | translate}}</button>
+            <button (click)="toCharge()">{{"subchain.15" | translate}}</button>
+            <button (click)="toWithdraw()">{{"subchain.7" | translate}}</button>
+        </div>
+    </div>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-segment [(ngModel)]="tabs">
+        <ion-segment-button value="record">
+            {{"assets.26" | translate}}
+            <div class="record_border"></div>
+        </ion-segment-button>
+        <ion-segment-button value="charge">
+            {{"subchain.22" | translate}}
+            <div class="charge_border"></div>
+        </ion-segment-button>
+        <ion-segment-button value="mention">
+            {{"subchain.23" | translate}}
+            <div class="mention_border"></div>
+        </ion-segment-button>
+    </ion-segment>
+    <div [ngSwitch]="tabs">
+        <div *ngSwitchCase="'record'">
+            <ion-grid class="grid3">
+                <ion-row *ngFor="let item of recordList" (click)="toDetail(item)">
+                    <ion-col>
+                        <img src="{{item.icon}}" alt="">
+                        <div>
+                            <span>{{item.value / 1000000000000000000}}
+                                {{subChainInfo.erc20_symbol?subChainInfo.erc20_symbol:'COIN'}}</span>
+                            <p>{{item.msg}}</p>
+                        </div>
+                        <span class="date">{{item.timestamp*1000 | date : 'yyyy-MM-dd HH:mm:ss'}}</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <p *ngIf="noData1" class="data">~{{"assets.39" | translate}}~</p>
+        </div>
+        <div *ngSwitchCase="'charge'">
+            <ion-grid class="grid3">
+                <ion-row *ngFor="let item of EnteringDepositList">
+                    <ion-col>
+                        <img src="../../../assets/imgs/receive.png" alt="">
+                        <div>
+                            <span>{{item.EnteringAmt / 1000000000000000000}}
+                                {{subChainInfo.erc20_symbol?subChainInfo.erc20_symbol:'COIN'}}</span>
+                            <p>{{"assets.39" | translate}}</p>
+                        </div>
+                        <span class="date">{{item.Enteringtime*1000 | date : 'yyyy-MM-dd HH:mm:ss'}}</span>
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngFor="let item of depositList">
+                    <ion-col>
+                        <img src="../../../assets/imgs/receive.png" alt="">
+                        <div>
+                            <span>{{item.EnterAmt / 1000000000000000000}}
+                                {{subChainInfo.erc20_symbol?subChainInfo.erc20_symbol:'COIN'}}</span>
+                            <p>{{"subchain.25" | translate}}</p>
+                        </div>
+                        <span class="date">{{item.Entertime*1000 | date : 'yyyy-MM-dd HH:mm:ss'}}</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <p *ngIf="noData2" class="data">~{{"assets.39" | translate}}~</p>
+        </div>
+        <div *ngSwitchCase="'mention'">
+            <ion-grid class="grid3">
+                <ion-row *ngFor="let item of frozenList">
+                    <ion-col>
+                        <img src="../../../assets/imgs/send.png" alt="">
+                        <div>
+                            <span>{{item.amount}} {{subChainInfo.erc20_symbol?subChainInfo.erc20_symbol:'COIN'}}</span>
+                            <p>{{"subchain.26" | translate}}</p>
+                        </div>
+                        <span class="date">{{item.date | date : 'yyyy-MM-dd HH:mm:ss'}}</span>
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngFor="let item of EnteringWithdrawList">
+                    <ion-col>
+                        <img src="../../../assets/imgs/send.png" alt="">
+                        <div>
+                            <span>{{item.RedeemingAmt / 1000000000000000000}}
+                                {{subChainInfo.erc20_symbol?subChainInfo.erc20_symbol:'COIN'}}</span>
+                            <p>{{"subchain.27" | translate}}</p>
+                        </div>
+                        <span class="date">{{item.Redeemingtime*1000 | date : 'yyyy-MM-dd HH:mm:ss'}}</span>
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngFor="let item of withdrawList">
+                    <ion-col>
+                        <img src="../../../assets/imgs/send.png" alt="">
+                        <div>
+                            <span>{{item.RedeemAmt / 1000000000000000000}}
+                                {{subChainInfo.erc20_symbol?subChainInfo.erc20_symbol:'COIN'}}</span>
+                            <p>{{"subchain.28" | translate}}</p>
+                        </div>
+                        <span class="date">{{item.Redeemtime*1000 | date : 'yyyy-MM-dd HH:mm:ss'}}</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <p *ngIf="noData3" class="data">~{{"assets.39" | translate}}~</p>
+        </div>
+    </div>
+    <!-- <div class="border">
+        <span class="record">交易记录</span>
+        <p></p>
+    </div>-->
+    <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
+<ion-footer>
+    <button ion-button full class="" (click)="jump('CollectionreceivePage')">{{"assets.29" | translate}}</button>
+    <button ion-button full class="" (click)="toTransfer()">{{"assets.28" | translate}}</button>
+</ion-footer>

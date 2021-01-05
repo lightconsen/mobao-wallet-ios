@@ -1,0 +1,117 @@
+<!--
+  Generated template for the NewsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{"news.2" | translate}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <div class="tops">
+        <img src="../../assets/imgs/slide.png" alt="">
+    </div>
+    <ion-list class="lists">
+        <h1>DAPP</h1>
+        <div class="items" (click)='willEnter(item)' *ngFor="let item of dappList">
+            <div class="list-top">
+                <div class="imgs">
+                    <img src="{{item.icon}}" alt="">
+                </div>
+                <div>
+                    <h4>{{item.name}}</h4>
+                    <p>{{item.description}}</p>
+                </div>
+            </div>
+            <!-- <div class="list-bottom">
+                <span>{{item.developer}}</span>
+                <span>{{item.uptime}}</span>
+            </div> -->
+        </div>
+    </ion-list>
+    <!--第一个弹框-->
+    <!-- <ion-item class="alert1">
+                <h1>授权签名</h1>
+                <div class="cbox">
+                    <span>收款方</span>
+                    <p>HDUEH738H9JAIQU82SHIEY917HSUE9372YEUBSHY83HSU</p >
+                </div>
+                <p class="wallet-font1"><span>资产</span>1MOAC</p >
+                <p class="wallet-font1"><span>备注</span>1586521</p >
+                <p class="wallet-font1"><span>费用</span>0.0000001 MOAC</p >
+                <div class="footer">
+                    <button class="cancel">取消</button>
+                    <button class="ok">确认</button>
+                </div>
+            </ion-item> -->
+    <!--第二个弹框-->
+    <!-- <ion-item class="alert2">
+                <h1>授权签名</h1>
+                <p class="wallet-font2">当前第三方应用需要签名验证身份,是否同意授权？</p >
+                <div class="footer">
+                    <button class="cancel">取消</button>
+                    <button class="ok">同意</button>
+                </div>
+            </ion-item> -->
+    <!--第三个弹框-->
+
+
+</ion-content>
+<ion-footer>
+    <div class="box" *ngIf="signFlag">
+        <ion-item class="alert3">
+            <h1>{{"news.3" | translate}}</h1>
+            <img (click)="cancelSign()" src="../../assets/imgs/close.png" alt="">
+            <ion-segment [(ngModel)]="tabs">
+                <ion-segment-button value="pass">{{"news.4" | translate}}</ion-segment-button>
+                <!-- <ion-segment-button value="collection" class="two">json</ion-segment-button> -->
+            </ion-segment>
+            <div [ngSwitch]="tabs">
+                <div *ngSwitchCase="'pass'" class="attribute">
+                    <p>{{dappName}}</p>
+                    <p>{{operate}}</p>
+                    <div class="cont">
+                        <span>{{name?(("news.5" | translate) +": "+ name):('MOAC' + ("assets.14" | translate))}}</span>
+                        <div>
+                            <div *ngFor="let item of params">
+                                <span>{{item.name}}</span><span>{{item.value}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div *ngSwitchCase="'collection'" class="attribute">
+                    <p>{{dappName}}</p>
+                    <p>{{operate}}</p>
+                    <div class="cont">
+                        <span>{{name?'合约交易->'+name:'MOAC交易'}}</span>
+                        <div>
+                            {{paramsJSON}}
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="footer">
+                <button class="cancel" (click)="cancelSign()">{{"assets.9" | translate}}</button>
+                <button class="ok" (click)="signPwd()">{{"news.6" | translate}}</button>
+            </div>
+        </ion-item>
+    </div>
+    <div class="box" *ngIf="enterFlag">
+        <!--第四个弹框-->
+        <ion-item class="alert4">
+            <h1>{{"news.8" | translate}} {{item.name}}</h1>
+            <p class="wallet-font3">{{"assets.1" | translate}}：{{"news.8" | translate}} {{item.name}}，{{"news.9" | translate}}，{{"news.10" | translate}} {{item.name}} {{"news.11" | translate}}</p>
+            <div class="footer1">
+                <button class="cancel1" (click)="enterCancel()">{{"assets.9" | translate}}</button>
+                <button class="ok1" (click)="enter()">{{"news.7" | translate}}</button>
+            </div>
+        </ion-item>
+    </div>
+</ion-footer>

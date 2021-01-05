@@ -1,0 +1,53 @@
+<!--
+  Generated template for the ImportPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{"login.4" | translate}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <p>{{"login.23" | translate}}</p>
+    <ion-grid class="grid">
+        <ion-row>
+            <ion-col>
+                <textarea type="text" [placeholder]="'login.24' | translate" [(ngModel)]="private" contenteditable="true"></textarea>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <p>{{"login.25" | translate}}</p>
+    <ion-grid class="cont">
+        <ion-row>
+            <ion-col>
+                <ion-input [placeholder]="'assets.48' | translate" type="text" [(ngModel)]="name" [attr.maxlength]="8" class="put"></ion-input>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-input [placeholder]="'assets.8' | translate"type="{{eyeFlag1?'text':'password'}}" [(ngModel)]="pwd" class="put"></ion-input>
+                <span (click)="eyeFlag1 = !eyeFlag1">
+                    <img src="../../../assets/imgs/openEye.png" alt="" *ngIf="eyeFlag1">
+                    <img src="../../../assets/imgs/closeEye.png" alt="" *ngIf="!eyeFlag1">
+                </span>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-input [placeholder]="'login.13' | translate" type="{{eyeFlag2?'text':'password'}}" [(ngModel)]="confirmPwd" class="puts"></ion-input>
+                <span (click)="eyeFlag2 = !eyeFlag2">
+                <img src="../../../assets/imgs/openEye.png" alt="" *ngIf="eyeFlag2">
+                <img src="../../../assets/imgs/closeEye.png" alt="" *ngIf="!eyeFlag2">
+            </span>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <button class="submit" (click)="exportWallet()">{{"login.26" | translate}}</button>
+</ion-content>

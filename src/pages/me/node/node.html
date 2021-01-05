@@ -1,0 +1,47 @@
+<!--
+  Generated template for the NodePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{"me.26" | translate}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list radio-group [(ngModel)]="network">
+        <ion-item class="items">
+            <p>{{"me.22" | translate}}</p>
+            <p>{{network}}</p>
+        </ion-item>
+        <div class="item1">
+            <p>{{"me.24" | translate}}</p>
+            <ion-label class="label1">https://gateway.moac.io/mainnet</ion-label>
+            <ion-radio value="https://gateway.moac.io/mainnet" class="radio1"></ion-radio>
+            <p>36ms</p>
+            <div class="texts">
+                <p>{{clientVersion}}</p>
+            </div>
+
+
+        </div>
+
+        <div class="item2">
+            <p>{{"me.22" | translate}}</p>
+            <ion-label class="label1">http://106.14.225.49:8545</ion-label>
+            <ion-radio value="http://106.14.225.49:8545" checked class="radio2"></ion-radio>
+            <p>36ms</p>
+            <div class="texts">
+                <p>{{clientVersion}}</p>
+            </div>
+
+
+        </div>
+    </ion-list>
+    <button class="footer" (click)="save()">{{"me.25" | translate}}</button>
+</ion-content>

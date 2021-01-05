@@ -1,0 +1,82 @@
+page-setpwd {
+    .back-button-text,
+    .back-button-text-ios {
+        display: none;
+    }
+    .bar-button-default-ios,
+    .bar-button-default.bar-button-ios-default,
+    .bar-button-clear-ios-default {
+        color: #222222;
+    }
+    // .toolbar-background-ios {
+    //     background: none;
+    // }
+    .top {
+        width: 100%;
+        text-align: center;
+        .logo {
+            width: 6rem;
+        }
+        p:nth-child(2) {
+            font-size: 1.9rem;
+            color: #717E8D;
+            margin-top: 0rem;
+        }
+        p:nth-child(3) {
+            width: 90%;
+            text-align: center;
+            color: #999999;
+            padding-top: 1rem;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+    .cont {
+        width: 100%;
+        background: #ffffff;
+        margin-top: 2rem;
+        height: 14rem;
+        border-radius: 5px;
+        box-shadow: #DFE0E3 0px 0px 10px;
+        position: relative;
+        .put {
+            height: 4rem;
+            line-height: 3rem;
+            border-bottom: 1px solid #F0F1F5;
+            margin: 0 auto;
+        }
+        .puts {
+            height: 3rem;
+            line-height: 3rem;
+            border-bottom: 1px solid #ffffff;
+            margin: 0 auto;
+        }
+        span {
+            display: block;
+            position: absolute;
+            right: 1rem;
+            top: 1.5rem;
+            img {
+                width: 2rem;
+            }
+        }
+    }
+    .sendto {
+        margin-top: 4rem;
+        button {
+            width: 100%;
+            height: 4rem!important;
+            background: linear-gradient(to right, #62CE49, #4FAD3A);
+            color: #ffffff;
+            color: #fff;
+            border-radius: 0.4rem;
+            outline-style: none;
+            font-size: 1.5rem;
+        }
+    }
+    .text-input-ios {
+        margin: 0px 0px;
+        padding: 0;
+        width: calc(100% - 8px - 8px);
+    }
+}

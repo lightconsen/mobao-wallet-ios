@@ -1,0 +1,250 @@
+page-asset {
+    ion-slides {
+        display: block;
+        width: 100%;
+        height: 30%;
+        background: #ffffff;
+        border-top: 1px solid #CDCDCD;
+        margin-top: 0rem;
+    }
+    .swiper-container {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+        position: relative;
+        z-index: 1;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        height: 12rem;
+    }
+    .titles {
+        span:nth-child(1) {
+            display: inline-block;
+            margin-left: 0rem;
+        }
+        span:nth-child(2) {
+            display: block;
+            float: right;
+            width: 2rem;
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            img {
+                width: 1.5rem;
+            }
+        }
+    }
+    .box {
+        width: 90%;
+        height: 10rem;
+        margin: 0 auto;
+        position: relative;
+        border-radius: 5px;
+        .img1 {
+            float: left;
+            width: 7rem;
+            margin-left: 1rem;
+            margin-top: 2rem;
+        }
+        span {
+            float: left;
+            color: #ffffff;
+            padding-top: 2rem;
+            padding-left: 1rem;
+        }
+        .img2 {
+            float: right;
+            width: 1.5rem;
+            margin-right: 1rem;
+            margin-top: 2rem;
+        }
+        p {
+            width: 80%;
+            display: block;
+            color: #ffffff;
+            position: absolute;
+            left: 1rem;
+            top: 3.2rem;
+            font-size: 1.4rem;
+            text-align: left;
+        }
+        .spans {
+            font-size: 1.4rem;
+            margin-top: 3.9rem;
+            margin-left: -1rem;
+        }
+        .arrow {
+            width: 1.5rem;
+            float: right;
+            position: absolute;
+            right: 1rem;
+            top: 2rem;
+        }
+        .spot {
+            color: #ffffff;
+            position: absolute;
+            right: 1rem;
+            margin-top: 5rem;
+        }
+    }
+    .segment-md .segment-button {
+        font-size: 1.6rem;
+        color: #222222;
+    }
+    .segment-md .segment-button.activated,
+    .segment-md .segment-button.segment-activated {
+        border-color: #60CE46;
+        opacity: 1;
+    }
+    .lists {
+        .items {
+            img {
+                width: 3rem;
+                float: left;
+                margin-top: 1rem;
+            }
+            span {
+                font-size: 1.5rem;
+                color: #222;
+                margin-left: 1rem;
+                margin-top: 0.5rem;
+            }
+            span:nth-child(2) {
+                display: inline-block;
+                padding-top: 1rem;
+                /* padding-left: 1rem; */
+                margin-left: 1rem;
+            }
+            span:nth-child(3) {
+                font-size: 1.3rem;
+                color: #222;
+                float: right;
+                margin-right: 2rem;
+                display: inline-block;
+                margin-top: 1.7rem;
+            }
+            .arrow {
+                width: 1.5rem;
+                float: right;
+                position: absolute;
+                right: 1rem;
+                top: 0.7rem;
+            }
+        }
+    }
+    .code-img {
+        display: inline-block;
+        width: 3rem !important;
+        height: 3rem !important;
+        line-height: 3rem;
+        text-align: center;
+        background: #000;
+        color: #ffffff !important;
+        border-radius: 50%;
+        margin-left: 0 !important;
+        font-size: 2rem !important;
+    }
+    .add {
+        right: 1rem;
+        position: absolute;
+        img {
+            width: 2.5rem;
+            margin-top: 0.5rem;
+        }
+    }
+    .segment-ios .segment-button.segment-activated {
+        color: #222;
+        background-color: #ffffff;
+        opacity: 1;
+        -webkit-transition: 100ms all linear;
+        transition: 100ms all linear;
+    }
+    .segment-ios .segment-button {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: 0;
+        height: 3.2rem;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #fff;
+        font-size: 1.3rem;
+        line-height: 3rem;
+        color: #222;
+        background-color: transparent;
+    }
+    .segment-ios .segment-button.segment-activated {
+        color: #222;
+        background-color: #ffffff;
+        opacity: 1;
+        margin-bottom: -4px;
+        -webkit-transition: 100ms all linear;
+        transition: 100ms all linear;
+        border-bottom: 2px solid #60CE46;
+    }
+    .label-md {
+        margin: -2px 8px 13px 0;
+    }
+    ion-refresher {
+        left: 0;
+        position: absolute;
+        z-index: 99999;
+        display: none;
+        width: 100%;
+        height: 60px;
+        top: 16rem !important;
+    }
+    ion-content.has-refresher>.scroll-content {
+        background-color: inherit;
+    }
+    .scroll-content {
+        left: 0;
+        right: 0;
+        top: 0px;
+        bottom: 0;
+        position: absolute;
+        display: block;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        will-change: scroll-position;
+        contain: size style layout;
+        padding-bottom: 3rem;
+    }
+    .list-ios {
+        width: 95%;
+        margin: 0 auto;
+    }
+    .item-ios {
+        margin-top: 2rem;
+        box-shadow: #DFE0E3 0px 0px 10px;
+        border-radius: 5px;
+        height: 5rem;
+        margin-top: 2rem;
+    }
+    ion-segment {
+        border-bottom: 1px solid #CDCDCD;
+        width: 100%;
+        // height: 3rem;
+        padding-right: 24%;
+        margin-top: 0rem;
+    }
+    .list-ios>.item-block:first-child {
+        border-top: 0.55px solid #ffffff;
+    }
+    .list-ios .item-block .item-inner {
+        border-bottom: 0.55px solid #ffffff;
+    }
+    .list-ios>.item-block:last-child,
+    .list-ios>.item-wrapper:last-child .item-block {
+        border-bottom: 0.55px solid #ffffff;
+    }
+    .label-ios {
+        margin: 0px 8px 11px 0;
+    }
+}
